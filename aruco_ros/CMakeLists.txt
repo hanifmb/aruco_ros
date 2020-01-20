@@ -48,6 +48,11 @@ add_executable(double src/simple_double.cpp
 add_dependencies(double ${PROJECT_NAME}_gencfg)
 target_link_libraries(double ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
+add_executable(detect_five src/detect_five.cpp
+                      src/aruco_ros_utils.cpp)
+add_dependencies(detect_five ${PROJECT_NAME}_gencfg)
+target_link_libraries(detect_five ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+
 add_executable(marker_publisher src/marker_publish.cpp
                                 src/aruco_ros_utils.cpp)
 add_dependencies(marker_publisher ${PROJECT_NAME}_gencfg ${catkin_EXPORTED_TARGETS})
